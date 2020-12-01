@@ -4,32 +4,33 @@ import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/Date'
+import {
+  getIndexData
+} from "../lib/posts"
 
-export default function Home({ allPostsData }) {
+export default function Home({ allPostsData, dataPage }) {
   return (
-    <Layout home>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
-      <section className={utilStyles.headingMd}>
+    <Layout 
+      home
+      meta={{
+        title: dataPage.name
+      }}>
+      {/* <section className={utilStyles.headingMd}>
         <p>Даров, я хуёк - ничего не могёк, эт моя простая хуйня</p>
         <p>
           (This is a sample website - you’ll be building a site like this on{' '}
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
         </p>
-      </section>
+      </section> */}
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
+        <h2 className={utilStyles.headingLg}>{dataPage.title}</h2>
         <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => 
+          {dataPage.input.map(({ id, title }) => 
             <li className={utilStyles.listItem} key={id}>
               <Link href={`/posts/${id}`}>
                 <a>{title}</a>
               </Link>
               <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
             </li>
           )}
         </ul>
@@ -40,9 +41,11 @@ export default function Home({ allPostsData }) {
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
+  const dataPage = getIndexData()
   return {
     props: {
-      allPostsData
+      allPostsData,
+      dataPage
     }
   }
 }

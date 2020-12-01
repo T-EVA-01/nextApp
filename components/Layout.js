@@ -5,13 +5,14 @@ import Link from 'next/link'
 
 
 const name = "Timofey Chunarev"
-export const siteTitle = 'Next.js Sample Website' 
+export const siteTitle = 'English' 
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, home, meta }) {
     return (
       <div className={styles.container}>
         <Head>
           <link rel="icon" href="/favicon.ico" />
+          <title>{meta.title}</title>
           <meta
             name="description"
             content="Learn how to build a personal website using Next.js"
@@ -28,16 +29,16 @@ export default function Layout({ children, home }) {
         <header className={styles.header}>
           {home ? (
             <>
-              <img
+              {/* <img
                 src="/images/profile.jpg"
                 className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
                 alt={name}
-              />
-              <h1 className={utilStyles.heading2Xl}>{name}</h1>
+              /> */}
+              <h1 className={utilStyles.heading2Xl}>{siteTitle}</h1>
             </>
           ) : (
             <>
-              <Link href="/">
+              {/* <Link href="/">
                 <a>
                   <img
                     src="/images/profile.jpg"
@@ -50,7 +51,7 @@ export default function Layout({ children, home }) {
                 <Link href="/">
                   <a className={utilStyles.colorInherit}>{name}</a>
                 </Link>
-              </h2>
+              </h2> */}
             </>
           )}
         </header>

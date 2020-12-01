@@ -3,15 +3,18 @@ import { getAllPostIds, getPostData } from '../../lib/posts'
 import Head from 'next/head'
 import Date from '../../components/Date'
 import utilStyles from '../../styles/utils.module.css'
+import { id } from 'date-fns/locale'
 
 
-export default function Post({ postData: {title, date }, postData }) {
+export default function Post({ postData: {title, date}, postData }) {
 
     return (
-        <Layout>
-            <Head>
-                <title>{title}</title>
-            </Head>
+        <Layout 
+            meta={{
+                title, 
+                date
+            }}
+        >
             <article>
                 <h1 className={utilStyles.headingXl}>{title}</h1>
                 <div className={utilStyles.lightText}>
