@@ -1,5 +1,5 @@
 {
-    "title": "Blog",
+    "title": "Tenses",
     "name": "Learn English",
     "input": [
         {
@@ -12,7 +12,11 @@
         },
         {
             "title": "Past Simple",
-            "id": "003"
+            "id": "003",
+            "text": [
+                "With past simple we can talk about an action or an event or a situation that started and ended in the past.",
+                "Then do we use the past simple tense? This are a main sitiations in which we can use the past simple"
+            ]
         },
         {
             "title": "Past Continuous",
@@ -28,7 +32,11 @@
         },
         {
             "title": "Present Perfect",
-            "id": "007"
+            "id": "007",
+            "text": [
+                "This tens show us that an action in the past has a resolt in the present, or an effect in the present. So, there’s that connection between past and present in the present perfect tense",
+                "In this examples abow we say ‘i lost my book’ in the past simple tense, that just means i lost my book somewhere in the past, but now i may probably find it.  But when we say ’I have lost my book’ it means what happend in the past is still true now in the present, and my book is still lost."
+            ]
         },
         {
             "title": "Present Perfect Continuous",
