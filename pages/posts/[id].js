@@ -21,9 +21,9 @@ export default function Post({ data: [{text, title, id}] }) {
                 <h1 className={utilStyles.headingXl}>{title}</h1>
                 <h2>{id}</h2>
                 {text && <div>{
-                    text.map(item => 
-                        {return <p>{item}</p>}
-                    )
+                    text.map(item => {
+                        return <p>{item}</p>
+                        })
                 }</div>}
 
             </article>
