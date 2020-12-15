@@ -18,6 +18,7 @@ const Article = styled.article`
     p {
         margin-top: 0;
         margin-bottom: 15px;
+        font-style: italic;
     }
 
     
