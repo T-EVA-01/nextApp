@@ -3,9 +3,16 @@ import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
     
+    #__next {
+        ${'' /* background-color: black; */}
+        height: 100%;
+    }
+
+
     * {
         box-sizing: border-box;
     }
+
 
     html,
     body {
@@ -33,6 +40,7 @@ const GlobalStyle = createGlobalStyle`
 
     ul {
         padding: 0;
+        margin: 0;
     }
 
     h1, h2, h3, h4, h5, span, a {
@@ -48,12 +56,11 @@ const GlobalStyle = createGlobalStyle`
 export default function App({Component, pageProps}) {
     return (
 
-
         <React.Fragment>
             <GlobalStyle/>
             <Component {...pageProps}/>
         </React.Fragment>
-        
+
     
     )
 }

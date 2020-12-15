@@ -15,7 +15,7 @@ const Section = styled.section`
         list-style: none;
     }
 
-    li {
+    li:not(:last-child) {
         margin: 0 0 1.25rem;
     }
 `

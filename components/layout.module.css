@@ -1,14 +1,14 @@
-.container {
+/* .container {
     max-width: 36rem;
     padding: 0 1rem;
-    margin: 3rem auto 6rem;
-}
+    margin: 0 auto ;
+} */
 
-.header {
+/* .header {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+} */
 
 .headerImage {
     width: 6rem;
@@ -20,6 +20,6 @@
     height: 8rem;
 }
 
-.backToHome {
+/* .backToHome {
     margin: 3rem 0 0;
-}
+} */

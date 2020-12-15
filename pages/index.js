@@ -1,6 +1,4 @@
 import Layout from '../components/Layout'
-import utilStyles from '../styles/utils.module.css'
-// import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import Section from '../components/section'
 import {
@@ -28,18 +26,15 @@ export default function Home({ dataPage }) {
             )}
         </ul>
       </Section>
-
-
+      
     </Layout>
   )
 }
 
 export async function getStaticProps() {
-  // const allPostsData = getSortedPostsData()
   const dataPage = getIndexData()
   return {
     props: {
-      // allPostsData,
       dataPage
     }
   }
