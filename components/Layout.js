@@ -5,21 +5,24 @@ import Link from 'next/link'
 import styled from 'styled-components'
 import Header from '../components/Header'
 import { cols } from '../styles/mixins'
-
+import { getIndexData } from '../lib/posts'
 
 const Layout = styled.main`
   position: relative;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* margin: 0 auto; */
+  padding: 0 80px;
 `
 
 export const siteTitle = 'English' 
 const name = "Timofey Chunarev"
 
 
-export default function Index({ home, meta, children, className }) {
+
+
+export default function Index({ home=false, meta, children, className, pageTitle }) {
     return (
       <React.Fragment>
         <Head>
@@ -31,7 +34,10 @@ export default function Index({ home, meta, children, className }) {
           <meta name="twitter:card" content="summary_large_image" />
         </Head>
 
-        <Header home/>
+        <Header 
+          home={home}
+          siteTitle={pageTitle}
+        />
         <Layout className={className}>
           {children}
         </Layout>

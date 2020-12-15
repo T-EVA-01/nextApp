@@ -5,8 +5,9 @@ import Link from 'next/link'
 
 const Header = styled.header`
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 20px;
 
     .header__title {
         font-size: 2.5rem;
@@ -17,13 +18,13 @@ const Header = styled.header`
     }
 
     .back-to-home {
-        margin: 3rem 0 0; 
+        /* margin: 3rem 0 0;  */
     }
 
 `
 
 
-const Index = function({home=false}) {
+const Index = function({home, siteTitle}) {
     return(
 
         <Header>

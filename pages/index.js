@@ -8,7 +8,7 @@ import {
 export default function Home({ dataPage }) {
   return (
     <Layout 
-      home
+      pageTittle={"dataPage.title"}
       meta={{
         title: dataPage.name
       }}>
@@ -33,6 +33,10 @@ export default function Home({ dataPage }) {
 
 export async function getStaticProps() {
   const dataPage = getIndexData()
+
+
+  console.log(dataPage)
+
   return {
     props: {
       dataPage

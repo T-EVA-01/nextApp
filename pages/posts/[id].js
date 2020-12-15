@@ -7,24 +7,25 @@ import utilStyles from '../../styles/utils.module.css'
 import {
     getIndexData
   } from "../../lib/posts"
-
+import Article from '../../components/Article'
 
 export default function Post({ data: [{text, title, id}] }) {
-    console.log(title)
+    // console.log(title)
+    console.log(text)
     return (
         <Layout 
+            home
             meta={{
                 title
             }}
+            pageTitle={id}
         >
-            <article>
-                <h1 className={utilStyles.headingXl}>{title}</h1>
-                {text && <div>{
-                    text.map(item => {
-                        return <p>{item}</p>
-                        })
-                }</div>}
-            </article>
+
+            <Article 
+                articleTitle={title}
+                articleText={text}
+                className={"article"}
+            />
         </Layout>
     )
 
@@ -60,7 +61,7 @@ export async function getStaticProps({ params }) {
     const postDatas = getIndexData()
     const data = postDatas.input.filter((item) => item.id === params.id)
     
-    console.log(data)
+    console.log("This page data :", data)
     return {
       props: {
         data
